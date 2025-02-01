@@ -5,88 +5,174 @@
     box-sizing: border-box;
 }
 
-/* Основной стиль для body */
+/* Основные стили */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    background-color: #f8f8f7;
     color: #333;
     line-height: 1.6;
-    padding-top: 20px;
+    margin: 0;
+    transition: background-color 0.3s ease;
 }
 
 /* Шапка сайта */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header .logo {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    background-color: white;
+    padding: 20px 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
 header .logo-img {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 10px;
+    max-height: 50px;
 }
 
-header h1 {
-    font-size: 36px;
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
 }
 
-/* Разделы */
-section {
-    padding: 40px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+nav ul li {
+    margin-left: 30px;
 }
 
-section h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-section p {
-    font-size: 18px;
+nav ul li a:hover {
+    color: #007aff;
 }
 
-/* Добавим стили для фотографий */
-.about-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-top: 20px;
+/* Герой секция */
+#hero {
+    background-image: url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#hero .hero-content {
+    max-width: 600px;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
     margin-bottom: 20px;
-    border: 4px solid #ddd;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* Ссылки на соцсети */
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #007aff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #005bb5;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Секции */
+.section {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.section-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
 ul {
     list-style-type: none;
+    padding: 0;
 }
 
 ul li {
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 ul li a {
+    color: #007aff;
     text-decoration: none;
-    color: #333;
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 ul li a:hover {
-    color: #007BFF;
+    text-decoration: underline;
+}
+
+/* VPN-секция */
+.vpn-section {
+    background-color: #f1f1f1;
+    padding: 60px 20px;
+}
+
+.vpn-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.vpn-section p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.vpn-section .cta-button {
+    background-color: #ff4081;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+}
+
+.vpn-section .cta-button:hover {
+    background-color: #e7006c;
 }
 
 /* Футер */
@@ -94,5 +180,39 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #333;
-    color: #fff;
+    color: white;
+    font-size: 1rem;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    header .logo-img {
+        max-height: 40px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+    }
 }
