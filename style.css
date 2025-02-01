@@ -105,6 +105,9 @@ header .btn:hover {
 #hero h1 {
     font-size: 3rem;
     font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.4); /* Полупрозрачный фон */
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .cta-button {
@@ -128,6 +131,7 @@ header .btn:hover {
     background-color: white;
     text-align: center;
     animation: fadeIn 2s ease-in-out;
+    transition: background-color 0.3s;
 }
 
 .section.dark-theme {
@@ -155,6 +159,9 @@ h2.section-title {
 .section-text {
     font-size: 1.2rem;
     color: inherit;
+    background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный фон */
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* VPN-секция */
@@ -163,31 +170,46 @@ h2.section-title {
     padding: 60px 20px;
 }
 
-.vpn-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+/* Контакты */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-.vpn-section .cta-button {
-    background-color: #ff4081;
-    padding: 12px 25px;
-    font-size: 1.2rem;
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.vpn-section .cta-button:hover {
-    background-color: #e7006c;
-}
+/* Мобильная версия */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
 
-/* Адаптивность */
-@media screen and (max-width: 768px) {
+    .cta-button {
+        font-size: 1rem;
+    }
+
     header {
-        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     nav ul {
         flex-direction: column;
-        align-items: center;
+        gap: 15px;
     }
 
-    nav ul li {
-        margin-left: 
+    .header-options {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
