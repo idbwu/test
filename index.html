@@ -6,6 +6,7 @@
     <meta name="description" content="ТРОЙНОЕ ПРОНИКНОВЕНИЕ">
     <title>Мой сайт</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -14,18 +15,22 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#about">Обо мне</a></li>
-                <li><a href="#social">Соцсети</a></li>
-                <li><a href="#vpn">IDBWUNS VPN</a></li>
-                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#about" class="nav-link">Обо мне</a></li>
+                <li><a href="#social" class="nav-link">Соцсети</a></li>
+                <li><a href="#vpn" class="nav-link">IDBWUNS VPN</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
             </ul>
         </nav>
+        <div class="header-options">
+            <button id="theme-toggle" class="btn">Темная тема</button>
+            <button id="language-toggle" class="btn">EN</button>
+        </div>
     </header>
 
     <section id="hero">
         <div class="hero-content">
-            <h1>Добро пожаловать на мой сайт!</h1>
-            <p>Здесь ты можешь узнать обо мне, моих проектах и связаться со мной.</p>
+            <h1 class="hero-title">Добро пожаловать на мой сайт!</h1>
+            <p class="hero-text">Здесь ты можешь узнать обо мне, моих проектах и связаться со мной.</p>
             <a href="#about" class="cta-button">Узнать больше</a>
         </div>
     </section>
@@ -34,14 +39,14 @@
         <div class="section-content">
             <img src="images/my_photo.jpg" alt="Итс ми мазафака" class="about-img">
             <div class="about-text">
-                <h2>Обо мне</h2>
-                <p>Привет, меня зовут Эмиль! Я увлекаюсь программированием. Здесь ты можешь найти информацию обо мне и моих проектах.</p>
+                <h2 class="section-title">Обо мне</h2>
+                <p class="section-text">Привет, меня зовут Эмиль! Я увлекаюсь программированием. Здесь ты можешь найти информацию обо мне и моих проектах.</p>
             </div>
         </div>
     </section>
 
     <section id="social" class="section">
-        <h2>Мои соцсети</h2>
+        <h2 class="section-title">Мои соцсети</h2>
         <ul>
             <li><a href="https://vk.com/idbwu" target="_blank">ВКонтакте</a></li>
             <li><a href="https://www.instagram.com/iamemilen" target="_blank">Instagram</a></li>
@@ -51,14 +56,14 @@
     </section>
 
     <section id="vpn" class="section vpn-section">
-        <h2>AmneziaVPN</h2>
-        <p>Безопасность в сети — это важно. Получите доступ к моему VPN-сервису IDBWUNS VPN для защиты ваших данных, обхода блокировок и анонимности в интернете.</p>
+        <h2 class="section-title">AmneziaVPN</h2>
+        <p class="section-text">Безопасность в сети — это важно. Получите доступ к моему VPN-сервису IDBWUNS VPN для защиты ваших данных, обхода блокировок и анонимности в интернете.</p>
         <a href="https://t.me/IDBWUNS_VPN" target="_blank" class="cta-button">Подробнее о IDBWUNS VPN</a>
     </section>
 
     <section id="contact" class="section">
-        <h2>Контакты</h2>
-        <p>Ты можешь связаться со мной по электронной почте: <a href="mailto:idbwuns@gmail.com">idbwuns@gmail.com</a>.</p>
+        <h2 class="section-title">Контакты</h2>
+        <p class="section-text">Ты можешь связаться со мной по электронной почте: <a href="mailto:idbwuns@gmail.com">idbwuns@gmail.com</a>.</p>
     </section>
 
     <footer>
