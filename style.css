@@ -7,12 +7,27 @@
 
 /* Основные стили */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f8f8f7;
     color: #333;
     line-height: 1.6;
-    margin: 0;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Темная тема */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+a {
+    color: #007aff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00bfff;
 }
 
 /* Шапка сайта */
@@ -27,6 +42,10 @@ header {
     top: 0;
     z-index: 1000;
     transition: background-color 0.3s ease;
+}
+
+header.dark-theme {
+    background-color: #212121;
 }
 
 header .logo-img {
@@ -45,17 +64,31 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: inherit;
     font-size: 1.2rem;
     font-weight: 500;
-    transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #007aff;
+header .header-options {
+    display: flex;
+    gap: 10px;
 }
 
-/* Герой секция */
+header .btn {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+header .btn:hover {
+    background-color: #005bb5;
+}
+
+/* Секция Героя */
 #hero {
     background-image: url('images/hero-bg.jpg');
     background-size: cover;
@@ -69,19 +102,9 @@ nav ul li a:hover {
     animation: fadeIn 2s ease-in-out;
 }
 
-#hero .hero-content {
-    max-width: 600px;
-}
-
 #hero h1 {
     font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 20px;
-}
-
-#hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
 }
 
 .cta-button {
@@ -99,17 +122,16 @@ nav ul li a:hover {
     background-color: #005bb5;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
 /* Секции */
 .section {
     padding: 50px 20px;
     background-color: white;
     text-align: center;
     animation: fadeIn 2s ease-in-out;
+}
+
+.section.dark-theme {
+    background-color: #333;
 }
 
 .section-content {
@@ -124,29 +146,15 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-h2 {
+h2.section-title {
     font-size: 2rem;
     color: #333;
     margin-bottom: 20px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 10px 0;
-}
-
-ul li a {
-    color: #007aff;
-    text-decoration: none;
+.section-text {
     font-size: 1.2rem;
-}
-
-ul li a:hover {
-    text-decoration: underline;
+    color: inherit;
 }
 
 /* VPN-секция */
@@ -160,11 +168,6 @@ ul li a:hover {
     margin-bottom: 20px;
 }
 
-.vpn-section p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-}
-
 .vpn-section .cta-button {
     background-color: #ff4081;
     padding: 12px 25px;
@@ -175,23 +178,10 @@ ul li a:hover {
     background-color: #e7006c;
 }
 
-/* Футер */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    font-size: 1rem;
-}
-
 /* Адаптивность */
 @media screen and (max-width: 768px) {
     header {
         padding: 20px;
-    }
-
-    header .logo-img {
-        max-height: 40px;
     }
 
     nav ul {
@@ -200,19 +190,4 @@ footer {
     }
 
     nav ul li {
-        margin-left: 0;
-        margin-bottom: 15px;
-    }
-
-    #hero h1 {
-        font-size: 2.5rem;
-    }
-
-    #hero p {
-        font-size: 1.1rem;
-    }
-
-    .cta-button {
-        font-size: 1rem;
-    }
-}
+        margin-left: 
