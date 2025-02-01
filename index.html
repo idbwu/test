@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Кнопки для изменения темы и языка -->
+    <div class="controls">
+        <button id="theme-toggle" class="control-btn">Сменить тему</button>
+        <button id="language-toggle" class="control-btn">EN</button>
+    </div>
+
     <header>
         <div class="logo">
             <img src="images/logo.png" alt="Логотип" class="logo-img">
@@ -20,10 +27,6 @@
                 <li><a href="#contact" class="nav-link">Контакты</a></li>
             </ul>
         </nav>
-        <div class="header-options">
-            <button id="theme-toggle" class="btn">Тема</button>
-            <button id="language-toggle" class="btn">Язык</button>
-        </div>
     </header>
 
     <section id="hero">
@@ -46,18 +49,18 @@
 
     <section id="social" class="section">
         <h2 class="section-title">Мои соцсети</h2>
-        <ul class="social-links">
-            <li><a href="https://vk.com/idbwu" class="social-link" target="_blank">ВКонтакте</a></li>
-            <li><a href="https://www.instagram.com/iamemilen" class="social-link" target="_blank">Instagram</a></li>
-            <li><a href="https://t.me/idbwu" class="social-link" target="_blank">Telegram</a></li>
-            <li><a href="https://t.me/tripletp" class="social-link" target="_blank">Telegram канал</a></li>
+        <ul>
+            <li><a href="https://vk.com/idbwu" target="_blank" class="social-link">ВКонтакте</a></li>
+            <li><a href="https://www.instagram.com/iamemilen" target="_blank" class="social-link">Instagram</a></li>
+            <li><a href="https://t.me/idbwu" target="_blank" class="social-link">Telegram</a></li>
+            <li><a href="https://t.me/tripletp" target="_blank" class="social-link">Telegram канал</a></li>
         </ul>
     </section>
 
     <section id="vpn" class="section vpn-section">
         <h2 class="section-title">AmneziaVPN</h2>
         <p class="section-text">Безопасность в сети — это важно. Получите доступ к моему VPN-сервису IDBWUNS VPN для защиты ваших данных, обхода блокировок и анонимности в интернете.</p>
-        <a href="https://t.me/IDBWUNS_VPN" class="cta-button" target="_blank">Подробнее о IDBWUNS VPN</a>
+        <a href="https://t.me/IDBWUNS_VPN" target="_blank" class="cta-button">Подробнее о IDBWUNS VPN</a>
     </section>
 
     <section id="contact" class="section">
@@ -66,7 +69,7 @@
     </section>
 
     <footer>
-        <p>© 2025 ТРОЙНОЕ ПРОНИКНОВЕНИЕ. Все права защищены.</p>
+        <p class="footer-text">© 2025 ТРОЙНОЕ ПРОНИКНОВЕНИЕ. Все права защищены.</p>
     </footer>
 
     <script src="script.js"></script>
