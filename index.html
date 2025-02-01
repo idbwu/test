@@ -3,41 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Мой личный сайт">
+    <meta name="description" content="ТРОЙНОЕ ПРОНИКНОВЕНИЕ">
     <title>Мой сайт</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="C:/Users/murat/OneDrive/Рабочий стол/my_site/logo.png" alt="Логотип сайта" class="logo-img">
-            <h1>Добро пожаловать на мой сайт!</h1>
+            <img src="images/logo.png" alt="Логотип" class="logo-img">
         </div>
         <nav>
             <ul>
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#social">Соцсети</a></li>
+                <li><a href="#vpn">IDBWUNS VPN</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>Обо мне</h2>
-        <img src="C:/Users/murat/OneDrive/Рабочий стол/my_site/my_photo.jpg" alt="Моя фотография" class="about-img">
-        <p>Привет, меня зовут Эмиль! Я занимаюсь ничего неделаньем. На этом сайте ты можешь найти информацию обо мне и моих проектах.</p>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Добро пожаловать на мой сайт!</h1>
+            <p>Здесь ты можешь узнать обо мне, моих проектах и связаться со мной.</p>
+            <a href="#about" class="cta-button">Узнать больше</a>
+        </div>
     </section>
 
-    <section id="social">
+    <section id="about" class="section">
+        <div class="section-content">
+            <img src="images/my_photo.jpg" alt="Итс ми мазафака" class="about-img">
+            <div class="about-text">
+                <h2>Обо мне</h2>
+                <p>Привет, меня зовут Эмиль! Я увлекаюсь программированием. Здесь ты можешь найти информацию обо мне и моих проектах.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="social" class="section">
         <h2>Мои соцсети</h2>
         <ul>
             <li><a href="https://vk.com/idbwu" target="_blank">ВКонтакте</a></li>
             <li><a href="https://www.instagram.com/iamemilen" target="_blank">Instagram</a></li>
-            <li><a href="https://www.t.me/idbwu" target="_blank">Telegram</a></li>
+            <li><a href="https://t.me/idbwu" target="_blank">Telegram</a></li>
+            <li><a href="https://t.me/tripletp" target="_blank">Telegram канал</a></li>
         </ul>
     </section>
 
-    <section id="contact">
+    <section id="vpn" class="section vpn-section">
+        <h2>AmneziaVPN</h2>
+        <p>Безопасность в сети — это важно. Получите доступ к моему VPN-сервису IDBWUNS VPN для защиты ваших данных, обхода блокировок и анонимности в интернете.</p>
+        <a href="https://t.me/IDBWUNS_VPN" target="_blank" class="cta-button">Подробнее о IDBWUNS VPN</a>
+    </section>
+
+    <section id="contact" class="section">
         <h2>Контакты</h2>
         <p>Ты можешь связаться со мной по электронной почте: <a href="mailto:idbwuns@gmail.com">idbwuns@gmail.com</a>.</p>
     </section>
@@ -49,3 +68,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
