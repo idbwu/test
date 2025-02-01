@@ -1,98 +1,64 @@
-ddocument.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const languageToggle = document.getElementById('language-toggle');
+// Переключение темы
+const themeToggleButton = document.getElementById('theme-toggle');
+const languageToggleButton = document.getElementById('language-toggle');
+const body = document.body;
 
-    // Сохраняем выбранную тему
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-theme');
-        themeToggle.textContent = 'Светлая тема';
-    }
-
-    // Переключение темы
-    themeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-theme');
-        const currentTheme = document.body.classList.contains('dark-theme') ? 'Темная тема' : 'Светлая тема';
-        themeToggle.textContent = currentTheme;
-        localStorage.setItem('theme', currentTheme === 'Темная тема' ? 'dark' : 'light');
-    });
-
-    // Переключение языка
-    languageToggle.addEventListener('click', function() {
-        const isRussian = document.documentElement.lang === 'ru';
-        document.documentElement.lang = isRussian ? 'en' : 'ru';
-        languageToggle.textContent = isRussian ? 'RU' : 'EN';
-
-        const texts = {
-            hero: {
-                title: isRussian ? 'Добро пожаловать на мой сайт!' : 'Welcome to my site!',
-                text: isRussian ? 'Здесь ты можешь узнать обо мне и моих проектах.' : 'Here you can learn about me and my projects.',
-            },
-            about: {
-                title: isRussian ? 'Обо мне' : 'About Me',
-                text: isRussian ? 'Привет, меня зовут Эмиль. Я программист, занимающийся созданием различных проектов в сфере технологий.' : 'Hello, my name is Emil. I am a programmer working on various projects in technology.',
-            },
-            social: {
-                title: isRussian ? 'Мои соцсети' : 'My Social Media',
-                links: isRussian ? [
-                    { name: 'ВКонтакте', url: 'https://vk.com/idbwu' },
-                    { name: 'Instagram', url: 'https://www.instagram.com/iamemilen' },
-                    { name: 'Telegram', url: 'https://t.me/idbwu' },
-                    { name: 'Telegram канал', url: 'https://t.me/tripletp' },
-                ] : [
-                    { name: 'VK', url: 'https://vk.com/idbwu' },
-                    { name: 'Instagram', url: 'https://www.instagram.com/iamemilen' },
-                    { name: 'Telegram', url: 'https://t.me/idbwu' },
-                    { name: 'Telegram Channel', url: 'https://t.me/tripletp' },
-                ]
-            },
-            vpn: {
-                title: isRussian ? 'AmneziaVPN' : 'AmneziaVPN',
-                text: isRussian ? 'Получите доступ к моему VPN-сервису IDBWUNS VPN для защиты ваших данных и анонимности в интернете.' : 'Get access to my IDBWUNS VPN service for protecting your data and anonymity online.',
-                linkText: isRussian ? 'Подробнее о IDBWUNS VPN' : 'More about IDBWUNS VPN',
-                linkUrl: 'https://t.me/IDBWUNS_VPN',
-            },
-            contact: {
-                title: isRussian ? 'Контакты' : 'Contact',
-                text: isRussian ? 'Можешь связаться со мной через email: idbwuns@gmail.com' : 'You can contact me via email: idbwuns@gmail.com',
-            }
-        };
-
-        // Обновляем все тексты
-        document.querySelector('.hero-title').textContent = texts.hero.title;
-        document.querySelector('.hero-text').textContent = texts.hero.text;
-        document.querySelector('.section-title').textContent = texts.about.title;
-        document.querySelector('.section-text').textContent = texts.about.text;
-
-        // Соцсети
-        const socialSectionTitle = document.querySelector('#social .section-title');
-        socialSectionTitle.textContent = texts.social.title;
-
-        const socialLinks = document.querySelector('#social .social-links');
-        socialLinks.innerHTML = '';
-        texts.social.links.forEach(link => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = link.url;
-            a.target = '_blank';
-            a.classList.add('social-link');
-            a.textContent = link.name;
-            li.appendChild(a);
-            socialLinks.appendChild(li);
-        });
-
-        // VPN
-        const vpnSectionTitle = document.querySelector('#vpn .section-title');
-        vpnSectionTitle.textContent = texts.vpn.title;
-        const vpnText = document.querySelector('#vpn .section-text');
-        vpnText.textContent = texts.vpn.text;
-        const vpnLink = document.querySelector('#vpn .cta-button');
-        vpnLink.textContent = texts.vpn.linkText;
-        vpnLink.href = texts.vpn.linkUrl;
-
-        // Контакты
-        const contactSectionTitle = document.querySelector('#contact .section-title');
-        contactSectionTitle.textContent = texts.contact.title;
-        const contactText = document.querySelector('#contact .section-text');
-        contactText.innerHTML = texts.contact.text;
-    });
+// Сменить тему
+themeToggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
 });
+
+// Переключение языка
+languageToggleButton.addEventListener('click', () => {
+    toggleLanguage();
+});
+
+let isRussian = true;
+
+// Функция для переключения языка
+function toggleLanguage() {
+    if (isRussian) {
+        changeToEnglish();
+    } else {
+        changeToRussian();
+    }
+    isRussian = !isRussian;
+}
+
+// Функция для переключения на русский язык
+function changeToRussian() {
+    document.querySelectorAll('.section-title')[0].innerText = 'Обо мне';
+    document.querySelectorAll('.section-title')[1].innerText = 'Мои соцсети';
+    document.querySelectorAll('.section-title')[2].innerText = 'AmneziaVPN';
+    document.querySelectorAll('.section-title')[3].innerText = 'Контакты';
+    document.querySelector('.hero-title').innerText = 'Добро пожаловать на мой сайт!';
+    document.querySelector('.hero-text').innerText = 'Здесь ты можешь узнать обо мне, моих проектах и связаться со мной.';
+    document.querySelector('.cta-button').innerText = 'Узнать больше';
+    document.querySelector('.section-text').innerText = 'Привет, меня зовут Эмиль! Я увлекаюсь программированием. Здесь ты можешь найти информацию обо мне и моих проектах.';
+    document.querySelector('.section-text').innerText = 'Безопасность в сети — это важно. Получите доступ к моему VPN-сервису IDBWUNS VPN для защиты ваших данных, обхода блокировок и анонимности в интернете.';
+    document.querySelector('.cta-button').innerText = 'Подробнее о IDBWUNS VPN';
+    document.querySelector('.footer p').innerText = '© 2025 ТРОЙНОЕ ПРОНИКНОВЕНИЕ. Все права защищены.';
+    document.querySelector('.social-link:nth-child(1)').innerText = 'ВКонтакте';
+    document.querySelector('.social-link:nth-child(2)').innerText = 'Instagram';
+    document.querySelector('.social-link:nth-child(3)').innerText = 'Telegram';
+    document.querySelector('.social-link:nth-child(4)').innerText = 'Telegram канал';
+}
+
+// Функция для переключения на английский язык
+function changeToEnglish() {
+    document.querySelectorAll('.section-title')[0].innerText = 'About Me';
+    document.querySelectorAll('.section-title')[1].innerText = 'My Social Networks';
+    document.querySelectorAll('.section-title')[2].innerText = 'AmneziaVPN';
+    document.querySelectorAll('.section-title')[3].innerText = 'Contacts';
+    document.querySelector('.hero-title').innerText = 'Welcome to my website!';
+    document.querySelector('.hero-text').innerText = 'Here you can learn about me, my projects, and contact me.';
+    document.querySelector('.cta-button').innerText = 'Learn More';
+    document.querySelector('.section-text').innerText = 'Hello, my name is Emil! I am into programming. Here you can find information about me and my projects.';
+    document.querySelector('.section-text').innerText = 'Online security is important. Get access to my VPN service IDBWUNS VPN for data protection, bypassing blocks, and anonymity online.';
+    document.querySelector('.cta-button').innerText = 'More about IDBWUNS VPN';
+    document.querySelector('.footer p').innerText = '© 2025 TRIPLE INTRUSION. All rights reserved.';
+    document.querySelector('.social-link:nth-child(1)').innerText = 'VKontakte';
+    document.querySelector('.social-link:nth-child(2)').innerText = 'Instagram';
+    document.querySelector('.social-link:nth-child(3)').innerText = 'Telegram';
+    document.querySelector('.social-link:nth-child(4)').innerText = 'Telegram Channel';
+}
